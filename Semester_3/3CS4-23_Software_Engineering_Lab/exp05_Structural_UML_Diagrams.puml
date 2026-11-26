@@ -1,0 +1,23 @@
+@startuml Structural_Class_Diagram
+class Library {
+  +addBook(b: Book)
+  +search(query: String): List<Book>
+}
+class Book {
+  -isbn: String
+  -title: String
+  -issued: boolean
+}
+class Member {
+  -memberId: String
+  -name: String
+}
+class Loan {
+  -issueDate: Date
+  -dueDate: Date
+  +calculateFine(): double
+}
+Library "1" *-- "0..*" Book
+Member "1" -- "0..*" Loan
+Book "1" -- "0..*" Loan
+@enduml

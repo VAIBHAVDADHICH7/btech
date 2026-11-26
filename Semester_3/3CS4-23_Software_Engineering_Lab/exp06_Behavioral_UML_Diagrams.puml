@@ -1,0 +1,15 @@
+@startuml Behavioral_Sequence_Diagram
+actor Student
+participant "UI Portal" as UI
+participant "LibraryService" as Svc
+database "Catalog DB" as DB
+
+Student -> UI: Request Book Issue(ISBN)
+UI -> Svc: issueBook(ISBN, memberId)
+Svc -> DB: checkAvailability(ISBN)
+DB --> Svc: available = true
+Svc -> DB: createLoanRecord()
+DB --> Svc: loanId
+Svc --> UI: Issue Confirmed
+UI --> Student: Display Due Date Receipt
+@enduml

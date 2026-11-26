@@ -1,0 +1,7 @@
+WBS,Task Name,Duration (Days),Start Day,Predecessors,Resource
+1,Requirements & SRS,5,1,,Business Analyst
+2,DFD & Structured Design,4,6,1,System Architect
+3,UML Modeling,4,10,2,System Architect
+4,Java Implementation,10,14,3,Java Developer
+5,Unit & Integration Testing,5,24,4,QA Engineer
+6,Deployment & Sign-off,2,29,5,Project Manager
